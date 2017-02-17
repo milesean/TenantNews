@@ -14,6 +14,7 @@ def index(request):
         'comments': comments,
         'replies': replies,
     }
+
     return render(request, 'base.html', context)
 
 
