@@ -13,7 +13,7 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return 'Post: {}'.format(self.post_id)
+        return 'Post: {}'.format(self.post_title)
 
 
 class Comments(models.Model):
@@ -23,6 +23,9 @@ class Comments(models.Model):
     comment_body = models.TextField(max_length=1000)
     reply_count = models.IntegerField(default=0)
     votes = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return 'Post: {}'.format(self.post)
 
 
 class Reply(models.Model):
